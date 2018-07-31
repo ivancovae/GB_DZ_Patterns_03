@@ -43,10 +43,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="FigureFactory.cs" />
-    <Compile Include="IFigure.cs" />
-    <Compile Include="IFigureCreator.cs" />
-    <Compile Include="IFigureFactory.cs" />
+    <Compile Include="AbstractFactory\FigureFactory.cs" />
+    <Compile Include="FactoryMethod\LowCicleCreator.cs" />
+    <Compile Include="Figures\IFigure.cs" />
+    <Compile Include="FactoryMethod\IFigureCreator.cs" />
+    <Compile Include="AbstractFactory\IFigureFactory.cs" />
+    <Compile Include="Figures\LowCicle.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Settings.Designer.cs">
@@ -54,11 +56,11 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
       <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
-    <Compile Include="Rectangle.cs" />
-    <Compile Include="RectangleCreator.cs" />
-    <Compile Include="Square.cs" />
-    <Compile Include="SquareCreator.cs" />
-    <Compile Include="UnknownFigure.cs" />
+    <Compile Include="Figures\Rectangle.cs" />
+    <Compile Include="FactoryMethod\RectangleCreator.cs" />
+    <Compile Include="Figures\Square.cs" />
+    <Compile Include="FactoryMethod\SquareCreator.cs" />
+    <Compile Include="Figures\UnknownFigure.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

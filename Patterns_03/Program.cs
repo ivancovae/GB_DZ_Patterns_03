@@ -18,7 +18,8 @@ namespace Patterns_03
             IFigure[] figures = {
                 figureFactory.CreateInstance( "Rectangle" , new Point(0, 0)),
                 figureFactory.CreateInstance( "Square" , new Point(20, 30)),
-                figureFactory.CreateInstance( "Cicle" , new Point(33, 22))
+                figureFactory.CreateInstance( "Box" , new Point(33, 22)),
+                figureFactory.CreateInstance( "LowCicle" , new Point(33, 22))
             };
             foreach (var figure in figures)
             {
@@ -27,6 +28,7 @@ namespace Patterns_03
 
             IFigureCreator[] creators = {
                 new RectangleCreator( new Point(10, 10) ),
+                new LowCicleCreator( new Point(12, 15) ),
                 new SquareCreator( new Point(20, 10) )
             };
 

@@ -50,3 +50,6 @@ modules.order
 Module.symvers
 Mkfile.old
 dkms.conf
+Patterns_03/.vs/
+Patterns_03/obj/
+Patterns_03/bin/

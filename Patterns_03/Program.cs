@@ -1,11 +1,29 @@
 ﻿using System;
 using System.Reflection;
 using System.Drawing;
+using System.Dynamic;
 
 namespace Patterns_03
 {
     class Program
     {
+        /// <summary>
+        /// Добавление свойств объекту
+        /// </summary>
+        /// <param name="dynObject">объект кому добавляем свойства</param>
+        static void TestDynamic(dynamic dynObject)
+        {
+            dynObject.Listen =
+              new Func<string>(() => Console.ReadLine());
+            dynObject.Say =
+              new Action<string>(s => Console.Write(s));
+            dynObject.Say("What's your ID? ");
+            dynObject.ID = dynObject.Listen();
+            dynObject.Say("Hello, " + dynObject.ID + "." +
+              Environment.NewLine);
+            dynObject.NewField = "";
+        }
+
         private static IFigureFactory LoadFactory()
         {
             string factoryName = Properties.Settings.Default.DefaultFigureFactory;
@@ -14,6 +32,15 @@ namespace Patterns_03
 
         static void Main(string[] args)
         {
+            // создание объекта с расширяемыми свойствами
+            dynamic flex = new ExpandoObject();
+            TestDynamic(flex);
+            // предполагаю, что для добавления свойств произвольному объект требуется использовать DLR и
+            // наследоваться от DynamicObject, так как ExpandoObject помечен как не наследуемый
+            // Вариант реализации класса ElastoClass
+            dynamic ec = new ElastoClass();
+            TestDynamic(ec);
+
             IFigureFactory figureFactory = LoadFactory();
             IFigure[] figures = {
                 figureFactory.CreateInstance( "Rectangle" , new Point(0, 0)),

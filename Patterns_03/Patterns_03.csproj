@@ -44,6 +44,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AbstractFactory\FigureFactory.cs" />
+    <Compile Include="ElastoClass.cs" />
     <Compile Include="FactoryMethod\LowCicleCreator.cs" />
     <Compile Include="Figures\IFigure.cs" />
     <Compile Include="FactoryMethod\IFigureCreator.cs" />
